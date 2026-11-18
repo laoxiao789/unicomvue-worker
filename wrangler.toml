@@ -1,0 +1,37 @@
+name = "unicomvue"
+main = "worker/index.js"
+compatibility_date = "2026-01-01"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = [
+  "/healthz",
+  "/gettoken",
+  "/gettoken/*",
+  "/ocs_proxy",
+  "/ocs_proxy/*",
+  "/basicdata_proxy",
+  "/basicdata_proxy/*",
+  "/qci_proxy",
+  "/qci_proxy/*"
+]
+
+[vars]
+UNICOM_BASE_URL = "https://m.client.10010.com"
+UNICOM_LOGIN_BASE_URL = "https://loginxhm.10010.com"
+UNICOM_APP_VERSION = "android@13.0000"
+UNICOM_APP_ID = "ChinaunicomMobileBusiness"
+UNICOM_DEVICE_BRAND = "samsung"
+UNICOM_DEVICE_MODEL = "SM-G9910"
+UNICOM_ANDROID_VERSION = "12"
+UNICOM_TIMEOUT_MS = "15000"
+UNICOM_SEND_SMS_PATH = "/mobileService/sendRadomNum.htm"
+UNICOM_LOGIN_PATH = "/mobileService/radomLogin.htm"
+UNICOM_PASSWORD_LOGIN_PATH = "/mobileService/login.htm"
+UNICOM_OCS_PATH = "/servicequerybusiness/operationservice/queryOcsPackageFlowLeftContentRevisedInJune"
+UNICOM_BASIC_DATA_PATH = "/servicebusiness/query/fiveg/getbasicdata"
+UNICOM_QCI_PATH = "/servicebusiness/newOrdered/queryOrderRelationship"
+CAPTCHA_ENABLED = "false"
+DEBUG_RAW = "false"
